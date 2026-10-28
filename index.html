@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zainab Store — a modern  storefront with product search, shopping cart, checkout, and order management.">
+  <title>Zainab Store — Everyday essentials</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="announcement">Free shipping on orders over $75 <span>✦</span> Thoughtful finds for everyday living</div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Zainab Store home"><span class="brand-mark">Z</span><span>Zainab <span class="brand-light">Store</span></span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#shop">Shop all</a><a href="#shop" data-category-link="Tech">Tech</a><a href="#shop" data-category-link="Home">Home</a><a href="#shop" data-category-link="Lifestyle">Lifestyle</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" id="searchFocus" aria-label="Focus search">⌕</button>
+      <button class="cart-button" id="openCart" aria-label="Open shopping cart"><span class="cart-icon">▱</span><span>Bag</span><span class="cart-count" id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> THE EVERYDAY EDIT</div>
+        <h1>Little things.<br><em>Big difference.</em></h1>
+        <p>Everyday favourites for your home, work, and routine — picked to be useful, look good, and fit your budget.</p>
+        <a class="primary-button hero-cta" href="#shop">Shop our picks <span>↗</span></a>
+        <div class="hero-proof"><div class="avatar-stack"><i>J</i><i>M</i><i>A</i></div><span><strong>1,200+</strong> happy shoppers</span><span class="proof-stars">★★★★★</span></div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-sun"></div>
+        <div class="hero-caption">EVERYDAY FINDS<br>YOU'LL ACTUALLY USE</div>
+        <div class="hero-image-wrap"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=85" alt="Minimal wristwatch on a warm neutral background"></div>
+        <div class="floating-note"><span class="note-icon">✳</span><span><strong>Picked with care</strong><small>Good quality, fair prices</small></span></div>
+        <span class="hero-number">01 / 04</span>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div><span>✦</span> Picked with care</div><div><span>↗</span> Easy shopping</div><div><span>♧</span> Convenient checkout</div><div><span>♡</span> For everyday use</div>
+    </section>
+
+    <section class="shop-section" id="shop">
+      <div class="section-heading">
+        <div><div class="eyebrow">SHOP THE COLLECTION</div><h2>Your next <em>favourite.</em></h2></div>
+        <p>From handy tech to little home upgrades, find something useful for yourself or someone you love.</p>
+      </div>
+      <div class="shop-controls">
+        <div class="category-pills" id="categoryPills">
+          <button class="category-pill active" data-category="All">All products <span id="allCount">8</span></button>
+          <button class="category-pill" data-category="Tech">Tech</button>
+          <button class="category-pill" data-category="Home">Home</button>
+          <button class="category-pill" data-category="Lifestyle">Lifestyle</button>
+        </div>
+        <div class="filters">
+          <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search products..." aria-label="Search products"><kbd>/</kbd></label>
+          <select id="sortSelect" aria-label="Sort products"><option value="featured">Sort: Featured</option><option value="price-low">Price: Low to high</option><option value="price-high">Price: High to low</option><option value="name">Name: A–Z</option></select>
+        </div>
+      </div>
+      <div class="result-line"><span id="resultCount">Showing 8 products</span><span>ZAINAB'S PICKS <b>✦</b></span></div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <div class="empty-state hidden" id="emptyProducts"><div>⌕</div><h3>No products found</h3><p>Try another search or category.</p><button class="text-button" id="resetFilters">Clear filters ↗</button></div>
+    </section>
+
+    <section class="editorial">
+      <div class="editorial-image"><img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=1200&q=85" alt="Calm, warm modern living space"></div>
+      <div class="editorial-copy"><div class="eyebrow">MADE FOR REAL EVERYDAY LIFE</div><h2>Good finds.<br><em>Everyday prices.</em></h2><p>We keep things simple: useful products, clear prices, and a shopping experience that feels easy from start to finish.</p><a href="#shop" class="text-button">Browse products <span>↗</span></a></div>
+    </section>
+
+    <section class="newsletter"><div><div class="eyebrow">A NOTE FROM ZAINAB STORE</div><h2>Deals and new arrivals.<br><em>Only when it matters.</em></h2></div><form id="newsletterForm"><label for="newsletterEmail">Your email address</label><div class="newsletter-input"><input id="newsletterEmail" type="email" placeholder="you@example.com" required><button aria-label="Subscribe">→</button></div><small id="newsletterMessage"> sign-up only. No emails will be sent.</small></form></section>
+  </main>
+
+  <footer class="footer"><a class="brand" href="#"><span class="brand-mark">Z</span><span>Zainab <span class="brand-light">Store</span></span></a><p>Useful finds for everyday life.</p><div><a href="#shop">Shop</a><a href="#" id="footerOrders">Your orders</a><a href="#top" id="backToTop">Back to top ↑</a></div><small>© 2026 Zainab Store. All rights reserved.</small></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer-header"><div><div class="eyebrow">YOUR SELECTION</div><h2>Your bag <span id="drawerItemCount">(0)</span></h2></div><button class="close-button" data-close aria-label="Close cart">×</button></div>
+    <div class="shipping-progress"><div class="shipping-progress-top"><span id="shippingMessage">Add more to unlock free delivery</span><span>✦</span></div><div class="progress-track"><div id="shippingProgress"></div></div></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty hidden" id="cartEmpty"><div class="empty-bag">▱</div><h3>Your bag is taking a break.</h3><p>Find something that makes your day.</p><button class="primary-button" data-close>Explore products</button></div>
+    <div class="cart-footer" id="cartFooter"><div class="subtotal-row"><span>Subtotal</span><strong id="cartSubtotal">$0.00</strong></div><p>Taxes and shipping calculated at checkout.</p><button class="primary-button checkout-button" id="goCheckout">Continue to checkout <span>→</span></button><div class="secure-note">♧ Secure checkout experience</div></div>
+  </aside>
+
+
+  <section class="modal-wrap hidden" id="productModal" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+    <div class="modal product-modal">
+      <div class="modal-header"><div><div class="eyebrow">PRODUCT DETAILS</div><h2 id="productModalTitle">Product information</h2></div><button class="close-button" data-close aria-label="Close product details">×</button></div>
+      <div id="productDetailsContent"></div>
+    </div>
+  </section>
+
+  <section class="modal-wrap hidden" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <div class="modal">
+      <div class="modal-header"><div><div class="eyebrow">ALMOST YOURS</div><h2 id="checkoutTitle">Checkout</h2></div><button class="close-button" data-close aria-label="Close checkout">×</button></div>
+      <div class="checkout-layout">
+        <form id="checkoutForm" class="checkout-form">
+          <h3>Contact information</h3>
+          <label>Full name<input name="name" autocomplete="name" required placeholder="Your full name"></label>
+          <label>Email address<input name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+          <h3>Delivery address</h3>
+          <label>Street address<input name="address" autocomplete="street-address" required placeholder="House number and street"></label>
+          <div class="form-row"><label>City<input name="city" autocomplete="address-level2" required placeholder="City"></label><label>Postal code<input name="postal" autocomplete="postal-code" required placeholder="Postal code"></label></div>
+          <label>Payment method<select name="payment" required><option value="Cash on delivery">Cash on delivery</option><option value="Pay on pickup">Pay on pickup</option></select></label>
+          <p class="-notice">No online payment is collected through this website.</p>
+          <button class="primary-button place-order" type="submit">Place  order <span>→</span></button>
+        </form>
+        <div class="order-summary"><h3>Order summary</h3><div id="checkoutSummary"></div><div class="summary-line"><span>Subtotal</span><span id="checkoutSubtotal">$0.00</span></div><div class="summary-line"><span>Shipping</span><span id="checkoutShipping">$0.00</span></div><div class="summary-line total"><strong>Total</strong><strong id="checkoutTotal">$0.00</strong></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="modal-wrap hidden" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+    <div class="modal success-modal"><button class="close-button success-close" data-close aria-label="Close confirmation">×</button><div class="success-icon">✓</div><div class="eyebrow">ORDER CONFIRMED</div><h2 id="successTitle">That's a good choice.</h2><p>Your  order has been saved on this device. Here's your order reference:</p><div class="order-reference" id="orderReference"></div><p class="muted">No payment was taken. You can view this order in order management.</p><button class="primary-button" id="viewOrders">View my orders <span>→</span></button></div>
+  </section>
+
+  <section class="modal-wrap hidden" id="ordersModal" role="dialog" aria-modal="true" aria-labelledby="ordersTitle">
+    <div class="modal orders-modal"><div class="modal-header"><div><div class="eyebrow">YOUR PURCHASES</div><h2 id="ordersTitle">Order management</h2></div><button class="close-button" data-close aria-label="Close orders">×</button></div><p class="orders-intro">Your orders are saved in this browser on this device.</p><div id="ordersList" class="orders-list"></div></div>
+  </section>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

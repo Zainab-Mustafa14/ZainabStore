@@ -50,7 +50,7 @@ You only need a modern web browser. Visual Studio Code is recommended for editin
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/YOUR-USERNAME/zainab-store.git
+   git clone https://github.com/Zainab-Mustafa14/ZainabStore.git
    ```
 
 2. Navigate to the project directory:
